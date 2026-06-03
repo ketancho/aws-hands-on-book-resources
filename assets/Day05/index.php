@@ -59,7 +59,7 @@ try {
   );
 
   $sql = "SELECT title, learning, image
-          FROM journal
+          FROM journals
           ORDER BY id ASC";
 
   $statement = $pdo->query($sql);
