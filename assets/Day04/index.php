@@ -47,22 +47,22 @@
   $journals = array(
     array(
       "title" => "Day1",
-      "learning" => "[皆さまの学びに書き換えてください] AWS アカウントの作成と、IAM ユーザーの作成について学びました。",
+      "learning" => "[皆さまの学びに書き換えてください] AWS アカウントの作成と、IAM ユーザーの作成について学びました。◯◯についてはもっと理解を深めたい。",
       "image" => "./imgs/img01.png",
     ),
     array(
       "title" => "Day2",
-      "learning" => "[皆さまの学びに書き換えてください] AWS アカウントを作成したときにやっておくべき設定について学んだ。",
+      "learning" => "[皆さまの学びに書き換えてください] AWS アカウントを作成したときにやっておくべき設定について学びました。特に、△△は案件の中でも利用できそうに思えた。",
       "image" => "./imgs/img02.png",
     ),
     array(
       "title" => "Day3",
-      "learning" => "[皆さまの学びに書き換えてください] Amazon VPC の基本について学んだ。",
+      "learning" => "[皆さまの学びに書き換えてください] Amazon VPC の基本について学びました。",
       "image" => "./imgs/img03.png",
     ),
     array(
       "title" => "Day4",
-      "learning" => "[皆さまの学びに書き換えてください] Amazon EC2 について学んだ。インスタンスを起動し、SSH 接続や、各種インストールを行った。",
+      "learning" => "[皆さまの学びに書き換えてください] Amazon EC2 について学びました。",
       "image" => "./imgs/img04.png",
     )
   );
