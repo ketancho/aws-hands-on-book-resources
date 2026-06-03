@@ -18,7 +18,7 @@
       margin-bottom: 40px;
     }
 
-    .post-card {
+    .journal-card {
       border: none;
       border-radius: 16px;
       overflow: hidden;
@@ -26,16 +26,16 @@
       transition: transform 0.2s;
     }
 
-    .post-card:hover {
+    .journal-card:hover {
       transform: translateY(-4px);
     }
 
-    .post-image {
+    .journal-image {
       height: 220px;
       object-fit: cover;
     }
 
-    .post-learning {
+    .journal-learning {
       color: #555;
     }
   </style>
@@ -63,7 +63,7 @@ try {
 
   $statement = $pdo->query($sql);
 
-  $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+  $journals = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {
 
@@ -79,22 +79,22 @@ try {
 
   <div class="row g-4">
 
-    <?php foreach ($posts as $post) : ?>
+    <?php foreach ($journals as $journal) : ?>
 
     <div class="col-md-6 col-lg-4">
 
-      <div class="card post-card h-100">
+      <div class="card journal-card h-100">
 
-        <img src="<?php echo $post['image']; ?>"
-             class="card-img-top post-image">
+        <img src="<?php echo $journal['image']; ?>"
+             class="card-img-top journal-image">
 
         <div class="card-body">
           <h5 class="card-title">
-            <?php echo $post['title']; ?>
+            <?php echo $journal['title']; ?>
           </h5>
 
-          <p class="card-text post-learning">
-            <?php echo $post['learning']; ?>
+          <p class="card-text journal-learning">
+            <?php echo $journal['learning']; ?>
           </p>
         </div>
 
