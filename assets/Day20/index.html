@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AWS Learning Journal - Serverless</title>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/config.js"></script>
+</head>
+
+<body class="min-h-screen" style="background-color: #f5f7fb;">
+    <div id="app">
+        <main class="max-w-[1320px] mx-auto px-4 py-12">
+            <h1 class="text-center text-4xl font-bold mb-10">
+                AWS Learning Journal - Serverless
+            </h1>
+
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div v-for="journal in journals" :key="journal.id"
+                    class="bg-white rounded-2xl shadow-md overflow-hidden transition-transform duration-200 hover:-translate-y-1">
+                    <img :src="journal.image" class="w-full h-[220px] object-cover">
+                    <div class="px-6 py-4">
+                        <h2 class="text-xl font-medium mb-2">
+                            {{ journal.title }}
+                        </h2>
+                        <p class="text-[#555]">
+                            {{ journal.learning }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    journals: []
+                }
+            },
+            mounted() {
+                this.fetchJournals();
+            },
+            methods: {
+                async fetchJournals() {
+                    const response = await fetch(`${window.CONFIG.API_BASE_URL}/journals`);
+                    this.journals = await response.json();
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
