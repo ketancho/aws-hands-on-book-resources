@@ -46,22 +46,22 @@
   $posts = array(
     array(
       "title" => "Day1",
-      "learning" => "AWS アカウントの作成と、IAM ユーザーの作成について学んだ。",
+      "learning" => "[皆さまの学びに書き換えてください] AWS アカウントの作成と、IAM ユーザーの作成について学びました。",
       "image" => "./imgs/img01.png",
     ),
     array(
       "title" => "Day2",
-      "learning" => "AWS アカウントを作成したときにやっておくべき設定について学んだ。",
+      "learning" => "[皆さまの学びに書き換えてください] AWS アカウントを作成したときにやっておくべき設定について学んだ。",
       "image" => "./imgs/img02.png",
     ),
     array(
       "title" => "Day3",
-      "learning" => "Amazon VPC について学んだ。xxxxxx",
+      "learning" => "[皆さまの学びに書き換えてください] Amazon VPC の基本について学んだ。",
       "image" => "./imgs/img03.png",
     ),
     array(
       "title" => "Day4",
-      "learning" => "Amazon EC2 について学んだ。インスタンスを起動し、接続や、各種インストールを行った。",
+      "learning" => "[皆さまの学びに書き換えてください] Amazon EC2 について学んだ。インスタンスを起動し、SSH 接続や、各種インストールを行った。",
       "image" => "./imgs/img04.png",
     )
   );
