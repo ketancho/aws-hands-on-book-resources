@@ -15,6 +15,7 @@
 
     .page-title {
       font-weight: bold;
+      color: #23303e;
       margin-bottom: 40px;
     }
 
