@@ -69,35 +69,23 @@
 ?>
 
 <div class="container py-5">
-
   <h1 class="text-center page-title">AWS Learning Journal</h1>
-
   <div class="row g-4">
-
     <?php foreach ($journals as $journal) : ?>
-
-    <div class="col-md-6 col-lg-4">
-
-      <div class="card journal-card h-100">
-
-        <img src="<?php echo $journal['image']; ?>"
-             class="card-img-top journal-image">
-
-        <div class="card-body">
-          <h5 class="card-title">
-            <?php echo $journal['title']; ?>
-          </h5>
-
-          <p class="card-text journal-learning">
-            <?php echo $journal['learning']; ?>
-          </p>
+      <div class="col-md-6 col-lg-4">
+        <div class="card journal-card h-100">
+          <img src="<?php echo $journal['image']; ?>" class="card-img-top journal-image">
+          <div class="card-body">
+            <h5 class="card-title">
+              <?php echo $journal['title']; ?>
+            </h5>
+            <p class="card-text journal-learning">
+              <?php echo $journal['learning']; ?>
+            </p>
+          </div>
         </div>
-
       </div>
-    </div>
-
     <?php endforeach; ?>
-
   </div>
 </div>
 
