@@ -9,7 +9,7 @@
               "s3:GetObject"
           ],
           "Resource": [
-              "arn:aws:s3:::(作成した S3 Bucket 名に修正する)/*"
+              "arn:aws:s3:::(作成した S3 Bucket 名)/*"
           ]
       }
   ]
