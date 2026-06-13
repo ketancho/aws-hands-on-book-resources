@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Batch Instance for aws-hands-on-book
+
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: # 皆さまのハンズオン時点での AMI ID
+      InstanceType: t3.micro
+      SubnetId: # 皆さまの public1-ap-northeast-1a サブネットのサブネット ID
+      SecurityGroupIds:
+        - !Ref SecurityGroup
+      Tags:
+        - Key: Name
+          Value: aws-hands-on-book-batch
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: aws-hands-on-book-batch-sg
+      GroupName: aws-hands-on-book-batch-sg
+      VpcId: # 皆さまの VPC ID

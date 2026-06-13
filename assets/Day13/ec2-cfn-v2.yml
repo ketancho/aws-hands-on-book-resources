@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Batch Instance for aws-hands-on-book 
+
+Resources:
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: # 先ほど調べた AMI ID
+      InstanceType: t3.nano
+      SubnetId: # 先ほど調べた public1-ap-northeast-1a サブネットのサブネット ID
+      Tags:
+        - Key: Name
+          Value: aws-hands-on-book-batch

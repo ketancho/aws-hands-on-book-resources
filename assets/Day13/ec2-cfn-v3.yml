@@ -1,18 +1,13 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Batch Instance for aws-hands-on-book
 
-Parameters:
-  SubnetId:
-    Type: AWS::EC2::Subnet::Id
-    Description: Select the subnet where you want to create the EC2 instance.
-
 Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0c036b62d1a414d7f
-      InstanceType: t3.micro
-      SubnetId: !Ref SubnetId
+      ImageId: # 皆さまのハンズオン時点での AMI ID
+      InstanceType: t3.nano
+      SubnetId: # 皆さまの public1-ap-northeast-1a サブネットのサブネット ID
       SecurityGroupIds:
         - !Ref SecurityGroup
       Tags:
@@ -23,9 +18,4 @@ Resources:
     Properties:
       GroupDescription: aws-hands-on-book-batch-sg
       GroupName: aws-hands-on-book-batch-sg
-      VpcId: vpc-076804e5a5443ad82 # 皆さまの VPC ID
-      # SecurityGroupIngress:
-      #   - IpProtocol: tcp
-      #     FromPort: 22
-      #     ToPort: 22
-      #     CidrIp: 0.0.0.0/0
+      VpcId: # 皆さまの VPC ID
