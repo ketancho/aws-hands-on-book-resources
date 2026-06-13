@@ -12,6 +12,7 @@ response = client.describe_instances(
 )
 
 instance_id = response['Reservations'][0]['Instances'][0]['InstanceId']
+
 response = client.create_image(
     InstanceId=instance_id,
     Name='aws-hands-on-book-web-ami-by-boto3',
