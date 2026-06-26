@@ -1,8 +1,7 @@
 import boto3
+ec2_client = boto3.client('ec2')
 
-client = boto3.client('ec2', region_name='ap-northeast-1')
-
-response = client.describe_instances(
+response = ec2_client.describe_instances(
     Filters=[
         {
             'Name': 'tag:Name',
@@ -13,7 +12,7 @@ response = client.describe_instances(
 
 instance_id = response['Reservations'][0]['Instances'][0]['InstanceId']
 
-response = client.create_image(
+response = ec2_client.create_image(
     InstanceId=instance_id,
     Name='aws-hands-on-book-web-ami-by-boto3',
     NoReboot=True
