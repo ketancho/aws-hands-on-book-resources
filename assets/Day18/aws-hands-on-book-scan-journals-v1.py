@@ -3,7 +3,7 @@ import boto3
 dynamodb_client = boto3.client('dynamodb')
 
 def lambda_handler(event, context):
-    # Journals テーブルを対象にスキャンメソッドを実行し、
+    # Journals テーブルを scan し、
     # レスポンスの Item 部分を変数 journals に格納する
     response = dynamodb_client.scan(
         TableName='Journals',
