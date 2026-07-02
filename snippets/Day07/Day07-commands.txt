@@ -1,0 +1,20 @@
+## RDS(MySQL) に接続する
+
+# RDS(MySQL) に接続する
+mysql -h (RDSエンドポイント) -u admin -p
+
+# データベースを選択する
+USE aws_learning_journal;
+
+## 画像の保存先を Amazon S3 に変更する
+
+# image 列を S3 のオブジェクト URL に更新する
+UPDATE journals
+SET image = CONCAT(
+  'https://(画像用S3バケット名).s3.ap-northeast-1.amazonaws.com/imgs/img0',
+  id,
+  '.png'
+);
+
+# 更新結果を確認する
+SELECT image FROM journals WHERE id = 1;
