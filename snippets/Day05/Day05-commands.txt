@@ -1,0 +1,57 @@
+## RDS インスタンスに接続する
+
+### MySQL クライアントをインストールする
+
+# MySQL Community Repository を追加する
+sudo dnf -y install https://dev.mysql.com/get/mysql84-community-release-el9-1.noarch.rpm
+
+# MySQL クライアントと PHP ドライバをインストールする
+sudo dnf -y install mysql php-mysqlnd
+
+# RDS インスタンスに接続する
+mysql -h (RDS エンドポイント) -u admin -p
+
+## データベースを作成する
+
+# データベースを作成する
+CREATE DATABASE aws_learning_journal;
+
+# データベースを選択する
+USE aws_learning_journal;
+
+# journals テーブルを作成する
+CREATE TABLE journals (
+  id INT NOT NULL PRIMARY KEY,
+  title VARCHAR(100),
+  learning VARCHAR(1000),
+  image VARCHAR(1000)
+);
+
+# レコードを追加する
+INSERT INTO journals VALUES (1, "Day1", "[皆さまの学びをご記載ください]", "./imgs/img01.png");
+INSERT INTO journals VALUES (2, "Day2", "[皆さまの学びをご記載ください]", "./imgs/img02.png");
+INSERT INTO journals VALUES (3, "Day3", "[皆さまの学びをご記載ください]", "./imgs/img03.png");
+INSERT INTO journals VALUES (4, "Day4", "[皆さまの学びをご記載ください]", "./imgs/img04.png");
+INSERT INTO journals VALUES (5, "Day5", "[皆さまの学びをご記載ください]", "./imgs/img05.png");
+
+# レコードを確認する
+SELECT * FROM journals;
+
+# MySQL を終了する
+EXIT;
+
+## Web アプリケーションを修正する
+
+### サンプルアプリケーションをコピーする
+
+# 作業ディレクトリを作成する
+mkdir work
+
+# Day05 の index.php をコピーする
+cp aws-hands-on-book-resources/assets/Day05/index.php work/
+
+# index.php を編集する
+vim work/index.php
+
+# Web サーバーへ配置する
+sudo cp work/index.php /var/www/html/

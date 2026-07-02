@@ -1,0 +1,51 @@
+## EC2 インスタンスに SSH 接続する
+
+# .pem キーの権限を変更する
+chmod 400 aws-hands-on-book.pem
+
+# EC2 インスタンスに SSH 接続する
+ssh -i aws-hands-on-book.pem ec2-user@(EC2 インスタンスのパブリック IPv4 アドレス)
+
+# CloudShell の IP アドレスを確認する
+curl http://checkip.amazonaws.com/
+
+## EC2 インスタンスを Web サーバーにする
+
+# ソフトウェアを最新の状態に更新する
+sudo dnf update -y
+
+# Apache HTTP Server（httpd）をインストールする
+sudo dnf install -y httpd
+
+# httpd を起動する
+sudo systemctl start httpd
+
+# EC2 インスタンス起動時に自動で httpd を起動する
+sudo systemctl enable httpd
+
+## アプリケーションをデプロイする
+
+### PHP をインストールし、設定ファイルを修正する
+
+# PHP をインストールする
+sudo dnf install -y php8.5
+
+# httpd.conf を修正する
+sudo vim /etc/httpd/conf/httpd.conf
+
+# 設定ファイルの文法を確認する
+httpd -t
+
+# httpd を再起動する
+sudo systemctl restart httpd
+
+### GitHub からサンプル・アプリケーションを取得する
+
+# Git をインストールする
+sudo dnf install -y git
+
+# GitHub リポジトリを取得する
+git clone https://github.com/ketancho/aws-hands-on-book-resources.git
+
+# Web アプリケーションを配置する
+sudo cp -r aws-hands-on-book-resources/assets/Day04/* /var/www/html/
