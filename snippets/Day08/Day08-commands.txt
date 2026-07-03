@@ -1,15 +1,21 @@
-## 画像を CloudFront 経由で取得するようデータベースをアップデートする
+# =====================================================
+# Day8: Amazon CloudFront
+# =====================================================
+
+# -----------------------------------------------------
+# 画像を CloudFront 経由で取得するようデータベースをアップデートする
+# -----------------------------------------------------
 
 # RDS インスタンスに接続する
 mysql -h (RDS エンドポイント) -u admin -p
 
 # データベースを選択する
-mysql> USE aws_learning_journal;
+USE aws_learning_journal;
 
 # image 列を CloudFront の URL に更新する
-mysql> UPDATE journals
+UPDATE journals
 SET image = REPLACE(
     image,
-    'https://(S3バケット名).s3.ap-northeast-1.amazonaws.com',
-    'https://(CloudFront ディストリビューションの DNS 名)'
+    'https://(S3 バケット名).s3.ap-northeast-1.amazonaws.com',
+    'https://(CloudFront ディストリビューションドメイン名)'
 );
