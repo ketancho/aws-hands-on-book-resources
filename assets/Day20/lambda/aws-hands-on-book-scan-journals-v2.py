@@ -23,8 +23,8 @@ def lambda_handler(event, context):
     # 【修正箇所2】Id の順に返すようにソート
     journal_data.sort(key=lambda x: x['id'])
 
-    # 【修正箇所3】journal_data を JSON 形式で返却、
-    # API 用のレスポンスヘッダーも追加
+    # 【修正箇所3】API Gateway 経由で返すレスポンス形式に変更
+    # JSON データとレスポンスヘッダーを返却
     return {
         "isBase64Encoded": False,
         "statusCode": 200,
