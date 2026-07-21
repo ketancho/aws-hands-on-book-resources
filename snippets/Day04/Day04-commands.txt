@@ -10,7 +10,7 @@
 chmod 400 aws-hands-on-book.pem
 
 # EC2 インスタンスに SSH 接続する
-ssh -i aws-hands-on-book.pem ec2-user@(EC2 インスタンスのパブリック IPv4 アドレス)
+ssh -i aws-hands-on-book.pem ec2-user@<EC2 インスタンスのパブリック IPv4 アドレス>
 
 # CloudShell の IP アドレスを確認する
 curl http://checkip.amazonaws.com/

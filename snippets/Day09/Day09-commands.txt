@@ -7,7 +7,7 @@
 # -----------------------------------------------------
 
 # シドニーリージョンの CloudShell から Web サイトへアクセス
-curl https://(CloudFront のディストリビューションドメイン名)
+curl https://<CloudFront のディストリビューションドメイン名>
 
 # 地域ベースルール追加後に再度アクセス
-curl https://(CloudFront のディストリビューションドメイン名)
+curl https://<CloudFront のディストリビューションドメイン名>

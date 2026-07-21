@@ -7,7 +7,7 @@
 # -----------------------------------------------------
 
 # EC2 インスタンス web-1a に SSH 接続する
-ssh -i aws-hands-on-book.pem ec2-user@(web-1a インスタンスのパブリック IPv4 アドレス)
+ssh -i aws-hands-on-book.pem ec2-user@<web-1a インスタンスのパブリック IPv4 アドレス>
 
 # index.php を修正する
 sudo vim /var/www/html/index.php
@@ -16,7 +16,7 @@ sudo vim /var/www/html/index.php
 exit
 
 # EC2 インスタンス web-1c に SSH 接続する
-ssh -i aws-hands-on-book.pem ec2-user@(web-1c インスタンスのパブリック IPv4 アドレス)
+ssh -i aws-hands-on-book.pem ec2-user@<web-1c インスタンスのパブリック IPv4 アドレス>
 
 # index.php を修正する
 sudo vim /var/www/html/index.php

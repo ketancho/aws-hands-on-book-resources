@@ -16,7 +16,7 @@ mkdir serverless-app-work
 cp -r aws-hands-on-book-resources/assets/Day16/s3/* serverless-app-work/
 
 # S3 バケットへ同期する
-aws s3 sync serverless-app-work s3://(本章 Day16 で作成した S3 バケット名)
+aws s3 sync serverless-app-work s3://<本章 Day16 で作成した S3 バケット名>
 
 # -----------------------------------------------------
 # アプリケーションを修正し、S3 バケットに配置する
@@ -26,4 +26,4 @@ aws s3 sync serverless-app-work s3://(本章 Day16 で作成した S3 バケッ�
 vim serverless-app-work/index.html
 
 # S3 バケットへ同期する
-aws s3 sync serverless-app-work s3://(本章 Day16 で作成した S3 バケット名)
+aws s3 sync serverless-app-work s3://<本章 Day16 で作成した S3 バケット名>

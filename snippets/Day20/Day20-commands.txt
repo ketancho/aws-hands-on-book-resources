@@ -20,4 +20,4 @@ vim serverless-app-work/js/config.js
 # -----------------------------------------------------
 
 # S3 バケットと同期する
-aws s3 sync serverless-app-work s3://(Day16で作成したS3バケット名)/
+aws s3 sync serverless-app-work s3://<Day16で作成したS3バケット名>/

@@ -7,7 +7,7 @@
 # -----------------------------------------------------
 
 # RDS インスタンスに接続する
-mysql -h (RDS エンドポイント) -u admin -p
+mysql -h <RDS エンドポイント> -u admin -p
 
 # データベースを選択する
 USE aws_learning_journal;
@@ -16,6 +16,6 @@ USE aws_learning_journal;
 UPDATE journals
 SET image = REPLACE(
     image,
-    'https://(S3 バケット名).s3.ap-northeast-1.amazonaws.com',
-    'https://(CloudFront ディストリビューションドメイン名)'
+    'https://<S3 バケット名>.s3.ap-northeast-1.amazonaws.com',
+    'https://<CloudFront ディストリビューションドメイン名>'
 );
