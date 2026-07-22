@@ -41,11 +41,11 @@ aws ec2 describe-instances \
 # -----------------------------------------------------
 
 # web-1a インスタンスを停止する
-aws ec2 stop-instances --instance-ids <web-1a のインスタンス ID>
+aws ec2 stop-instances --instance-ids <aws-hands-on-book-web-1a のインスタンス ID を入力>
 
 # -----------------------------------------------------
 # AWS CLI を使って web-1a インスタンスを再開する
 # -----------------------------------------------------
 
 # web-1a インスタンスを開始する
-aws ec2 start-instances --instance-ids <web-1a のインスタンス ID>
+aws ec2 start-instances --instance-ids <aws-hands-on-book-web-1a のインスタンス ID を入力>

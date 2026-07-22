@@ -10,7 +10,7 @@ Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: # 皆さまのハンズオン時点での AMI ID
+      ImageId: <控えた AMI ID を入力>
       InstanceType: t3.micro
       SubnetId: !Ref SubnetId
       SecurityGroupIds:
@@ -23,4 +23,4 @@ Resources:
     Properties:
       GroupDescription: aws-hands-on-book-batch-sg
       GroupName: aws-hands-on-book-batch-sg
-      VpcId: # 皆さまの VPC ID
+      VpcId: <控えた VPC ID を入力>
