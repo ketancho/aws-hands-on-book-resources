@@ -2,7 +2,7 @@ import json
 import urllib.parse
 import boto3
 
-# 【修正箇所1】CSV ファイルを読み取るために追加
+# 【修正箇所1】CSVファイルを読み取るために追加
 import csv
 import io
 
@@ -10,7 +10,7 @@ print('Loading function')
 
 s3 = boto3.client('s3')
 
-# 【修正箇所2】DynamoDB を操作するクライアントを作成
+# 【修正箇所2】DynamoDBを操作するクライアントを作成
 dynamodb_client = boto3.client('dynamodb')
 
 def lambda_handler(event, context):
@@ -22,19 +22,19 @@ def lambda_handler(event, context):
     try:
         response = s3.get_object(Bucket=bucket, Key=key)
 
-        # 【修正箇所3】Content-Type を表示する処理は不要なためコメントアウト
+        # 【修正箇所3】Content-Typeを表示する処理は不要なためコメントアウト
         # print("CONTENT TYPE: " + response['ContentType'])
         # return response['ContentType']
 
         # 【修正箇所4（ここから）】
-        # S3 から取得した CSV ファイルを文字列として読み込む
+        # S3から取得したCSVファイルを文字列として読み込む
         csv_text = response['Body'].read().decode('utf-8')
-        # CSV 文字列を解析できる形式に変換する
+        # CSV文字列を解析できる形式に変換する
         reader = csv.reader(io.StringIO(csv_text))
         # ヘッダー行を読み飛ばす
         next(reader)
 
-        # CSV ファイルの各行（2行目以降）を Item として DynamoDB テーブルに PUT する
+        # CSVファイルの各行（2行目以降）をItemとしてDynamoDBテーブルにPUTする
         for row in reader:
             dynamodb_client.put_item(
                 TableName='Journals',

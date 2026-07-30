@@ -3,20 +3,20 @@
 # =====================================================
 
 # -----------------------------------------------------
-# EC2 インスタンスに SSH 接続する
+# EC2インスタンスにSSH接続する
 # -----------------------------------------------------
 
-# .pem キーの権限を変更する
+# .pemキーの権限を変更する
 chmod 400 aws-hands-on-book.pem
 
-# EC2 インスタンスに SSH 接続する
-ssh -i aws-hands-on-book.pem ec2-user@<EC2 インスタンスのパブリック IPv4 アドレス>
+# EC2インスタンスにSSH接続する
+ssh -i aws-hands-on-book.pem ec2-user@<EC2インスタンスのパブリックIPv4アドレス>
 
-# CloudShell の IP アドレスを確認する
+# CloudShellのIPアドレスを確認する
 curl http://checkip.amazonaws.com/
 
 # -----------------------------------------------------
-# EC2 インスタンスを Web サーバーにする
+# EC2インスタンスをWebサーバーにする
 # -----------------------------------------------------
 
 # ソフトウェアを最新の状態に更新する
@@ -25,33 +25,33 @@ sudo dnf update -y
 # Apache HTTP Server（httpd）をインストールする
 sudo dnf install -y httpd
 
-# httpd を起動する
+# httpdを起動する
 sudo systemctl start httpd
 
-# EC2 インスタンス起動時に自動で httpd を起動する
+# EC2インスタンス起動時に自動でhttpdを起動する
 sudo systemctl enable httpd
 
 # -----------------------------------------------------
 # アプリケーションをデプロイする
 # -----------------------------------------------------
 
-# PHP をインストールする
+# PHPをインストールする
 sudo dnf install -y php8.5
 
-# httpd.conf を修正する
+# httpd.confを修正する
 sudo vim /etc/httpd/conf/httpd.conf
 
 # 設定ファイルの文法を確認する
 httpd -t
 
-# httpd を再起動する
+# httpdを再起動する
 sudo systemctl restart httpd
 
-# Git をインストールする
+# Gitをインストールする
 sudo dnf install -y git
 
-# GitHub リポジトリを取得する
+# GitHubリポジトリを取得する
 git clone https://github.com/ketancho/aws-hands-on-book-resources.git
 
-# Web アプリケーションを配置する
+# Webアプリケーションを配置する
 sudo cp -r aws-hands-on-book-resources/assets/Day04/* /var/www/html/

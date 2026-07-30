@@ -2,7 +2,7 @@
 # Day19
 # =====================================================
 
-# EventBridge Scheduler の event
+# EventBridge Schedulerのevent
 
 {
   "instance_name": "aws-hands-on-book-batch"

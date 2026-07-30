@@ -6,27 +6,27 @@
 # バッチインスタンスの現状を確認する
 # -----------------------------------------------------
 
-# ec2-user に切り替える
+# ec2-userに切り替える
 sudo su ec2-user
 
 # ホームディレクトリに移動する
 cd ~
 
-# AWS CLI のバージョンを確認する
+# AWS CLIのバージョンを確認する
 aws --version
 
-# EC2 インスタンス一覧を取得する
+# EC2インスタンス一覧を取得する
 aws ec2 describe-instances
 
 # -----------------------------------------------------
-# query / filters / output オプションを利用する
+# query/filters/outputオプションを利用する
 # -----------------------------------------------------
 
-# EC2 インスタンス名・インスタンス ID・ステータスを表示する
+# EC2インスタンス名・インスタンスID・ステータスを表示する
 aws ec2 describe-instances \
 --query 'Reservations[*].Instances[*].[Tags[?Key==`Name`].Value|[0],InstanceId,State.Name]'
 
-# Name タグで EC2 インスタンスを絞り込む
+# NameタグでEC2インスタンスを絞り込む
 aws ec2 describe-instances \
 --filters "Name=tag:Name,Values=aws-hands-on-book-web-1a" \
 --query 'Reservations[*].Instances[*].[Tags[?Key==`Name`].Value|[0],InstanceId,State.Name]'
@@ -37,15 +37,15 @@ aws ec2 describe-instances \
 --output table
 
 # -----------------------------------------------------
-# AWS CLI を使って web-1a インスタンスを停止する
+# AWS CLIを使ってweb-1aインスタンスを停止する
 # -----------------------------------------------------
 
-# web-1a インスタンスを停止する
-aws ec2 stop-instances --instance-ids <aws-hands-on-book-web-1a のインスタンス ID を入力>
+# web-1aインスタンスを停止する
+aws ec2 stop-instances --instance-ids <aws-hands-on-book-web-1aのインスタンスIDを入力>
 
 # -----------------------------------------------------
-# AWS CLI を使って web-1a インスタンスを再開する
+# AWS CLIを使ってweb-1aインスタンスを再開する
 # -----------------------------------------------------
 
-# web-1a インスタンスを開始する
-aws ec2 start-instances --instance-ids <aws-hands-on-book-web-1a のインスタンス ID を入力>
+# web-1aインスタンスを開始する
+aws ec2 start-instances --instance-ids <aws-hands-on-book-web-1aのインスタンスIDを入力>

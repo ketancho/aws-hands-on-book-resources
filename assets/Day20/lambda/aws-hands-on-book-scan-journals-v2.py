@@ -8,8 +8,8 @@ def lambda_handler(event, context):
     )
     journals = response['Items']
 
-    # 【修正箇所1】DynamoDB 独自形式ではなく、
-    # フロントエンドで扱いやすい JSON 形式に変換
+    # 【修正箇所1】DynamoDB独自形式ではなく、
+    # フロントエンドで扱いやすいJSON形式に変換
     journal_data = []
     for journal in journals:
         journal_item = {
@@ -20,11 +20,11 @@ def lambda_handler(event, context):
         }
         journal_data.append(journal_item)
 
-    # 【修正箇所2】Id の順に返すようにソート
+    # 【修正箇所2】Idの順に返すようにソート
     journal_data.sort(key=lambda x: x['id'])
 
-    # 【修正箇所3】API Gateway 経由で返すレスポンス形式に変更
-    # JSON データとレスポンスヘッダーを返却
+    # 【修正箇所3】API Gateway経由で返すレスポンス形式に変更
+    # JSONデータとレスポンスヘッダーを返却
     return {
         "isBase64Encoded": False,
         "statusCode": 200,

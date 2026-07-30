@@ -3,33 +3,33 @@
 # =====================================================
 
 # -----------------------------------------------------
-# AMI から2台目の EC2 インスタンスを作成する
+# AMIから2台目のEC2インスタンスを作成する
 # -----------------------------------------------------
 
-# EC2 インスタンス web-1a に SSH 接続する
-ssh -i aws-hands-on-book.pem ec2-user@<web-1a インスタンスのパブリック IPv4 アドレス>
+# EC2インスタンスweb-1aにSSH接続する
+ssh -i aws-hands-on-book.pem ec2-user@<web-1aインスタンスのパブリックIPv4アドレス>
 
-# index.php を修正する
+# index.phpを修正する
 sudo vim /var/www/html/index.php
 
-# CloudShell に戻る
+# CloudShellに戻る
 exit
 
-# EC2 インスタンス web-1c に SSH 接続する
-ssh -i aws-hands-on-book.pem ec2-user@<web-1c インスタンスのパブリック IPv4 アドレス>
+# EC2インスタンスweb-1cにSSH接続する
+ssh -i aws-hands-on-book.pem ec2-user@<web-1cインスタンスのパブリックIPv4アドレス>
 
-# index.php を修正する
+# index.phpを修正する
 sudo vim /var/www/html/index.php
 
-# CloudShell に戻る
+# CloudShellに戻る
 exit
 
 # -----------------------------------------------------
-# 片方の EC2 インスタンスに障害を発生させたときの挙動を確認する
+# 片方のEC2インスタンスに障害を発生させたときの挙動を確認する
 # -----------------------------------------------------
 
-# web-1c の httpd を停止する
+# web-1cのhttpdを停止する
 sudo systemctl stop httpd
 
-# web-1c の httpd を起動する
+# web-1cのhttpdを起動する
 sudo systemctl start httpd

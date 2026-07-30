@@ -3,17 +3,17 @@
 # =====================================================
 
 # -----------------------------------------------------
-# RDS インスタンスに接続する
+# RDSインスタンスに接続する
 # -----------------------------------------------------
 
-# MySQL Community Repository を追加する
+# MySQL Community Repositoryを追加する
 sudo dnf -y install https://dev.mysql.com/get/mysql84-community-release-el9-1.noarch.rpm
 
-# MySQL クライアントと PHP ドライバをインストールする
+# MySQLクライアントとPHPドライバをインストールする
 sudo dnf -y install mysql php-mysqlnd
 
-# RDS インスタンスに接続する
-mysql -h <RDS エンドポイント> -u admin -p
+# RDSインスタンスに接続する
+mysql -h <RDSエンドポイント> -u admin -p
 
 # -----------------------------------------------------
 # データベースを作成する
@@ -25,7 +25,7 @@ CREATE DATABASE aws_learning_journal;
 # データベースを選択する
 USE aws_learning_journal;
 
-# journals テーブルを作成する
+# journalsテーブルを作成する
 CREATE TABLE journals (
   id INT NOT NULL PRIMARY KEY,
   title VARCHAR(100),
@@ -43,21 +43,21 @@ INSERT INTO journals VALUES (5, "Day5", "<皆さまの学びをご記載くだ�
 # レコードを確認する
 SELECT * FROM journals;
 
-# MySQL を終了する
+# MySQLを終了する
 EXIT;
 
 # -----------------------------------------------------
-# Web アプリケーションを修正する
+# Webアプリケーションを修正する
 # -----------------------------------------------------
 
 # 作業ディレクトリを作成する
 mkdir work
 
-# Day05 の index.php をコピーする
+# Day05のindex.phpをコピーする
 cp aws-hands-on-book-resources/assets/Day05/index.php work/
 
-# index.php を編集する
+# index.phpを編集する
 vim work/index.php
 
-# Web サーバーへ配置する
+# Webサーバーへ配置する
 sudo cp work/index.php /var/www/html/
