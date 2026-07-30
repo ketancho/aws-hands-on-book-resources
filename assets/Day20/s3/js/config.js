@@ -1,5 +1,5 @@
 const CONFIG = {
-  API_BASE_URL: '<API Gateway のデフォルトのエンドポイント>',
+  API_BASE_URL: '<API Gatewayのデフォルトのエンドポイント>',
 };
 
 window.CONFIG = CONFIG;

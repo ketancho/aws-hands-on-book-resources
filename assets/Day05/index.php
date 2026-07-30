@@ -45,10 +45,10 @@
 
 <?php
 
-$host = '<RDS インスタンスのエンドポイント>';
+$host = '<RDSインスタンスのエンドポイント>';
 $dbname = 'aws_learning_journal';
 $username = 'admin';
-$password = '<RDS インスタンス作成時に設定したパスワード>';
+$password = '<RDSインスタンス作成時に設定したパスワード>';
 
 try {
 

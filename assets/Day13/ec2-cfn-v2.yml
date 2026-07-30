@@ -5,9 +5,9 @@ Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: <控えた AMI ID を入力>
+      ImageId: <控えたAMI IDを入力>
       InstanceType: t3.nano
-      SubnetId: <控えたサブネット ID を入力>
+      SubnetId: <控えたサブネットIDを入力>
       Tags:
         - Key: Name
           Value: aws-hands-on-book-batch
